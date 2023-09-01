@@ -23,7 +23,7 @@ export default function Home() {
                 className="rounded-full"
             />
             <blockquote className="w-[150px] inline-block max-w-[750px] text-sm text-muted-foreground sm:text-md text-center "> 
-                I appreciate you coming here. I am eager to collaborate with you for this year's ministry. Let us do the work as a "chidren of light!"
+                I appreciate you coming here. I am eager to collaborate with you for this years ministry. Let us do the work as a chidren of light!
             </blockquote>
 
         </section>
