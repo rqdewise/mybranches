@@ -105,7 +105,7 @@ export const StoreModal = () => {
                 name="bdate"
                 render={({field}) => (
                   <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>Birth day</FormLabel>
                       <FormControl>
                           <Input disabled={loading} 
                           placeholder="Birthday" {...field}/>
