@@ -13,8 +13,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'My Braches | Ecommerce',
-  description: 'Every Business should have Ecommerce',
+  title: 'My Branches | Ecommerce',
+  description: 'Every Business should have Online Shop',
 }
 
 export default function RootLayout({
