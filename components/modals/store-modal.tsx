@@ -41,10 +41,10 @@ import { Textarea } from '@/components/ui/textarea';
 
 const formSchema = z.object({
   name: z.string().min(5),
-  bdate: z.coerce.date(),
-  email: z.string().min(7),
+  bdate: z.string(),
+  phone: z.string().min(11),
+  email: z.string(),
   address: z.string(),
-  phone: z.string()
 })
 
 export const StoreModal = () => {
@@ -55,7 +55,7 @@ export const StoreModal = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      bdate: new Date,
+      bdate: "",
     },
   })
 
@@ -73,7 +73,6 @@ export const StoreModal = () => {
         setLoading(false)
       }
   }
-  const [date, setDate] = React.useState<Date>()
 
   return(   
         <Card className="m-10">
@@ -106,30 +105,10 @@ export const StoreModal = () => {
                 name="bdate"
                 render={({field}) => (
                   <FormItem>
-                      <FormLabel>Birth Date: </FormLabel>
+                      <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Popover>
-                          <PopoverTrigger asChild>
-                            <Button
-                              variant={"outline"}
-                              className={cn(
-                                "w-[280px] justify-start text-left font-normal",
-                                !date && "text-muted-foreground"
-                              )}
-                            >
-                              <CalendarIcon className="mr-2 h-4 w-4" />
-                              {date ? format(date, "PPP") : <span>Pick a date</span>}
-                            </Button>
-                          </PopoverTrigger>
-                          <PopoverContent className="w-auto p-0">
-                            <Calendar
-                              mode="single"
-                              selected={date}
-                              onSelect={setDate}
-                              initialFocus
-                            />
-                          </PopoverContent>
-                        </Popover>
+                          <Input disabled={loading} 
+                          placeholder="Birthday" {...field}/>
                       </FormControl>
                       <FormMessage />
                   </FormItem>
